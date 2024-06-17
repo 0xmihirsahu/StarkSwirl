@@ -34,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/argentlabs/Starknet-Scaffold/issues"
   },
-  "homepage": "https://github.com/argentlabs/Starknet-Scaffold#readme"
+  "homepage": "https://github.com/argentlabs/Starknet-Scaffold#readme",
+  "dependencies": {
+    "react-hook-form": "^7.52.0"
+  }
 }
