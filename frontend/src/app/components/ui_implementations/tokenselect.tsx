@@ -1,10 +1,9 @@
 "use client"
-
+import React, { useState } from "react"
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-
 import { Button } from "../ui/button"
 import {
   Form,
@@ -23,6 +22,7 @@ import {
   SelectValue,
 } from "../ui/select"
 import { toast } from "../ui/use-toast"
+import { Slider } from "../ui/slider"
 
 const FormSchema = z.object({
   token: z.string({
@@ -31,6 +31,8 @@ const FormSchema = z.object({
 })
 
 export default function Tokenselect() {
+  const [currentSliderIndex, setCurrentSliderIndex] = useState(0)
+  const ethereumvalues: Array<number> = [0.1, 1, 10, 100]
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   })
@@ -74,6 +76,15 @@ export default function Tokenselect() {
             </FormItem>
           )}
         />
+        <Slider
+          max={3}
+          min={0}
+          step={1}
+          onValueChange={(value) => setCurrentSliderIndex(value)}
+          className="bg-white"
+        />
+        current value: {ethereumvalues[currentSliderIndex]}
+        {/* @ts-ignore */}
         <Button type="submit" className="bg-white w-full">
           Connect
         </Button>
