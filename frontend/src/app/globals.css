@@ -86,11 +86,11 @@ body {
   border-right: none;
   border-top-left-radius: 4px;
 }
-.tabs ul li:first-child:hover a:after {
+.tabs ul li:first-child a:hover:after {
   --tw-bg-opacity: 1;
   background-color: rgb(190 24 93 / var(--tw-bg-opacity));
 }
-.tabs ul li:last-child:hover a:before {
+.tabs ul li:last-child a:hover:before {
   --tw-bg-opacity: 1;
   background-color: rgb(190 24 93 / var(--tw-bg-opacity));
 }
