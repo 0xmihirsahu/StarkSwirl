@@ -94,6 +94,28 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(190 24 93 / var(--tw-bg-opacity));
 }
+.tab-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  border: 1px solid #e42763;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  transition: background-color 0.3s;
+}
+
+.tab-item.active {
+  background-color: #e42763;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tab-item:hover {
+  background-color: #f08;
+}
+
 .content {
   display: none;
   height: 100%;
