@@ -80,7 +80,7 @@ export default function Tokenselect() {
           max={3}
           min={0}
           step={1}
-          onValueChange={(value) => setCurrentSliderIndex(value)}
+          onValueChange={(value: number[]) => setCurrentSliderIndex(value[0])}
           className="bg-white"
         />
         current value: {ethereumvalues[currentSliderIndex]}
