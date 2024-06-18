@@ -6,32 +6,23 @@ import Tokenselect from "./ui_implementations/tokenselect"
 export default function Interactioncard() {
   const [tabIndex, setTabIndex] = useState<number>(1)
 
-  // Two children lists, first child list with content cut after and last child with content cut before
   return (
-    <div className="tabs flex flex-col ">
-      <nav className="min-h-14">
-        <ul className="flex items-center justify-between flex-grow-1 flex-shrink-0">
-          <li className="m-0 p-0">
+    <div className="tabs flex flex-col">
+      <nav className="min-h-14 mb-4">
+        <ul className="flex items-center justify-start">
+          <li className="mr-4">
             <a
               onClick={() => setTabIndex(1)}
-              className={
-                tabIndex === 1
-                  ? "active flex justify-center items-center relative mr-7 m-0 pr-7 border border-red-600 border-solid cursor-pointer"
-                  : "flex justify-center items-center relative mr-7 m-0 pr-7 border border-red-600 border-solid cursor-pointer hover:bg-pink-700"
-              }
+              className={`tab-item ${tabIndex === 1 ? "active" : "hover:bg-pink-700"}`}
               style={{ fontSize: "1.35rem" }}
             >
               <span>Deposit</span>
             </a>
           </li>
-          <li className="m-0 p-0 ">
+          <li>
             <a
               onClick={() => setTabIndex(2)}
-              className={
-                tabIndex === 2
-                  ? "active flex justify-center items-center relative mr-7 m-0 pr-7 border border-red-600 border-solid cursor-pointer"
-                  : "flex justify-center items-center relative mr-7 m-0 pr-7 border border-red-600 border-solid cursor-pointer hover:bg-pink-700"
-              }
+              className={`tab-item ${tabIndex === 2 ? "active" : "hover:bg-pink-700"}`}
               style={{ fontSize: "1.35rem" }}
             >
               <span>Withdraw</span>
@@ -39,10 +30,7 @@ export default function Interactioncard() {
           </li>
         </ul>
       </nav>
-      <section
-        className="flex flex-col bg-dark h-full border border-red-600 border-solid"
-        style={{ padding: "1.5rem 1.5rem 2rem" }}
-      >
+      <section className="flex flex-col bg-dark h-full border border-red-600 p-6">
         <div className={tabIndex === 1 ? "content active-content" : "content"}>
           <Tokenselect />
         </div>
